@@ -98,8 +98,52 @@ git init 을 하면 .git의 폴더(숨김처리), 로컬 저장소가 나오게 
 
 ## 로컬 저장소 생성 실습
 1. 컴퓨터에 폴더 생성
-1. Git Bash 로 만든 폴더에 들어가기
+1. Git Bash 로 만든 폴더에 들어가기     
 1. git init 으로 로컬 저장소 생성
+
+>순서대로 진행
+git bash에 `pwd` 를 입력하면 현재 폴더를 알 수 있다  
+
+`ls` 를 입력하면 현재 파일에 어떤 폴더와 어떤 파일이 있는지 알 수 있다  
+
+다른 폴더를 설치하려면 `cd Documents` (change directory Documents) 를 입력한다  
+~/Documents 로 위치가 출력된다  
+
+이 `pwd` , `ls` , `cd Documents` 를 활용해 원하는 폴더에 접근한다  
+생성한 빈 폴더에 접근하면 `ls` 를 입력했을 때 아무것도 출력되지 않는다
+
+`git init` 을 입력한다
+initialized impty Git repository in ~~ 가 출력된다  
+빈 깃 레포지토리(로컬저장소)를 만들었다는 뜻이다  
+`git init` 을 한 후에는 `(master)` 라는 단어가 추가되어있다
+
+`ls -al` 을 출력하면 `.git` 파일이 보이다  
+`.git`파일이은 레퍼지토리가 만들어 졌다는 뜻이다  
+즉 숨겨진, 보이지않는 폴더를 볼 수 있게 해준다  
+
+## 첫번째 버전 만들기
+
+### 커밋(commit) = 하나의 버전  
+
+페이지 1, 2, 3 작성 = commit,  
+페이지 2 수정 = commit  
+이런 버전들을 오갈 수 있다
+
+### add = 커밋으로 만들길 원하는 파일만 선택
+페이지 1, 2, 3 작성 = add,  
+페이지 1, 2 선택 = commit  
+결과적으로 커밋은 1, 2가 된다  
+
+### 버전 생성 실습
+1. VS Code에서 README.md, index.html 파일 생성
+1. 원하는 파일만 선택하기
+`git add README.md`
+1. 메시지를 달아 커밋으로 만들기
+`gmit comit -m "프로젝트 설명 파일 추가"`
+1. 생성한 커밋 보기
+`git log`
+
+
 
 ## Git Bash 사용하기
 

@@ -80,6 +80,8 @@ BitBucket | Atlassian | 사용자 600만명, 지라(Jira)와 연동이 쉽다 | 
 
 GitHub에 코드를 올리는 과정
 
+<br>
+
 ## 프로젝트 폴더에 Git을 쓴다는 명령
 git init 을 한다  
 git init 을 하면 .git의 폴더(숨김처리), 로컬 저장소가 나오게 된다  
@@ -96,7 +98,7 @@ git init 을 하면 .git의 폴더(숨김처리), 로컬 저장소가 나오게 
 **한 폴더에 하나의 로컬 저장소만 유지해야한다**  
 .git을 만들고 원격 저장소에서 코드를 받아오면 또 .git이 생기기 때문에 충돌이 발생한다
 
-## 로컬 저장소 생성 실습
+### 로컬 저장소 생성 실습
 1. 컴퓨터에 폴더 생성
 1. Git Bash 로 만든 폴더에 들어가기     
 1. git init 으로 로컬 저장소 생성
@@ -106,10 +108,9 @@ git bash에 `pwd` 를 입력하면 현재 폴더를 알 수 있다
 
 `ls` 를 입력하면 현재 파일에 어떤 폴더와 어떤 파일이 있는지 알 수 있다  
 
-다른 폴더를 설치하려면 `cd Documents` (change directory Documents) 를 입력한다  
-~/Documents 로 위치가 출력된다  
+다른 폴더를 선택하려면 `cd "들어갈폴더이름"` (change directory) 를 입력한다  
 
-이 `pwd` , `ls` , `cd Documents` 를 활용해 원하는 폴더에 접근한다  
+이 `pwd` , `ls` , `cd` 를 활용해 원하는 폴더에 접근한다  
 생성한 빈 폴더에 접근하면 `ls` 를 입력했을 때 아무것도 출력되지 않는다
 
 `git init` 을 입력한다
@@ -120,6 +121,8 @@ initialized impty Git repository in ~~ 가 출력된다
 `ls -al` 을 출력하면 `.git` 파일이 보이다  
 `.git`파일이은 레퍼지토리가 만들어 졌다는 뜻이다  
 즉 숨겨진, 보이지않는 폴더를 볼 수 있게 해준다  
+
+<br>
 
 ## 첫번째 버전 만들기
 
@@ -135,21 +138,64 @@ initialized impty Git repository in ~~ 가 출력된다
 결과적으로 커밋은 1, 2가 된다  
 
 ### 버전 생성 실습
-1. VS Code에서 README.md, index.html 파일 생성
-1. 원하는 파일만 선택하기
+1. VS Code에서 선택한 폴더에 README.md, index.html 파일 생성
+1. 원하는 파일만 선택하기  
 `git add README.md`
-1. 메시지를 달아 커밋으로 만들기
-`gmit comit -m "프로젝트 설명 파일 추가"`
-1. 생성한 커밋 보기
+1. 메시지를 달아 커밋으로 만들기  
+`git commit -m "프로젝트 설명 파일 추가"`
+1. 생성한 커밋 보기  
 `git log`
 
+* git add . 을 하면 폴더에 있는 전체 파일을 추가할 수 있다
 
+### 커밋특징
+* 커밋은 '의미 있는 변동사항' 을 묶어서 만든다
+* 만약 하나의 기능을 고치는데 5가지 파일을 수정했다면 그 5가지를 묶어서 하나의 커밋으로 만든다
+* 개발자들이 어떤 파일을 수정했는지 손쉽게 파악할 수 있다
+* 커밋 메시지를 적는게 관리하기 편하다
 
-## Git Bash 사용하기
+<br>
 
+## 만든 버전 GitHub에 올리기 
+GitHub에 만든 버전을 올려서 다른 사람들과 함께 버전 관리를 할 수 있다  
 
+> 만든버전을 github에 올리려면 아래의 과정을 거쳐야 한다
 
+GitHub 사이트에서 프로젝트 저장소 만들기  
+내 컴퓨터 프로젝트 폴더에 GitHub 저장소 주소 알려주기 = `git remote add`  
+내 컴퓨터에 만들었던 덩어리 GitHub에 올리기 = `git push`
 
+### 원격 저장소 GitHub에서 만들고 커밋 푸쉬하기 실습
+1. GitHub에 로그인해서 레퍼지토리 생성
+1. 내 컴퓨터 로컬저장소폴더에 GitHub 저장소 주소 알려주기    
+`git remote add origin https://github.com/아이디/이름.git`  
+remote add = 원격저장소를 추가한다는 말이다  
+origin = 원격저장소를 'origin' 이라는 이름 으로 추가한다는 말이다 (origin이 아닌 다른 이름도 된다)
+1. 만든 커밋 푸쉬하기  
+`git push origin master`  
+'origin' 이라는 이름으로 리모트를 추가했기 때문에 'origin' 이다  
+'master' = 브렌치라고 하는 개념이다 (기본 브렌티가 'master' 다)  
+즉 'origin' 리모트에 'master' 브렌치에 커밋들이 올라가게 된다  
+1. GitHub 사이트에서 올라간 커밋 확인  
+
+<a href = "https://myhappyman.tistory.com/54" target = "_blank" title = "참고자료">원격저장소 주소 삭제하기</a>  
+`git remote rm 저장소이름`  
+즉 `git remote rm origin`
+
+github의 우측상단에서 레퍼지토리를 생성할 수 있다  
+* New repository = 새로운 저장소
+* Import repository = 저장소 가져오기  
+* New gist = 코드 조각을 올릴 때 사용  
+저장소는 큰 단위의 폴더, 여러가지 코드가 모여있다
+* New organization = 팀프로젝트 등을 할 때 팀이름으로 만들 수 있다  
+
+README.md는 깃허브 저장소에 들어왔을 때 이 소스코드가 무엇을 하는지, 어떤 정보를 봤으면 좋겠는지 등을 요약하는 안내하는 역할을 한다
+
+<br>
+
+## 다른 사람이 만든 저장소 받아오기
+원격 저장소를 내 컴퓨터에 받아는 것을 **클론 (clobe)** 이라 한다  
+원격 저장소의 데이터를 가져오는 것을 **풀 (pull)** 이라 한다
 
 <br>
 

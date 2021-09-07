@@ -1,4 +1,4 @@
-> **패스트캠퍼스 Git & GitHub - 진유림 강사** 를 참고
+> **패스트캠퍼스 Git & GitHub - 진유림 강사** 와 블로그 <a href = "https://myhappyman.tistory.com/54" target = "_blank" title = "참고자료">개발 흔적 남기기</a> 를 참고
 
 # Git & GitHub
 
@@ -119,7 +119,7 @@ initialized impty Git repository in ~~ 가 출력된다
 `git init` 을 한 후에는 `(master)` 라는 단어가 추가되어있다
 
 `ls -al` 을 출력하면 `.git` 파일이 보이다  
-`.git`파일이은 레퍼지토리가 만들어 졌다는 뜻이다  
+`.git`파일이은 레포지토리가 만들어 졌다는 뜻이다  
 즉 숨겨진, 보이지않는 폴더를 볼 수 있게 해준다  
 
 <br>
@@ -166,7 +166,7 @@ GitHub 사이트에서 프로젝트 저장소 만들기
 내 컴퓨터에 만들었던 덩어리 GitHub에 올리기 = `git push`
 
 ### 원격 저장소 GitHub에서 만들고 커밋 푸쉬하기 실습
-1. GitHub에 로그인해서 레퍼지토리 생성
+1. GitHub에 로그인해서 레포지토리 생성
 1. 내 컴퓨터 로컬저장소폴더에 GitHub 저장소 주소 알려주기    
 `git remote add origin https://github.com/아이디/이름.git`  
 remote add = 원격저장소를 추가한다는 말이다  
@@ -178,11 +178,13 @@ origin = 원격저장소를 'origin' 이라는 이름 으로 추가한다는 말
 즉 'origin' 리모트에 'master' 브렌치에 커밋들이 올라가게 된다  
 1. GitHub 사이트에서 올라간 커밋 확인  
 
-<a href = "https://myhappyman.tistory.com/54" target = "_blank" title = "참고자료">원격저장소 주소 삭제하기</a>  
-`git remote rm 저장소이름`  
+* 외부 저장소 확인 = `git remote -v`
+
+* 외부 저장소 삭제 =`git remote rm 저장소이름`  
 즉 `git remote rm origin`
 
-github의 우측상단에서 레퍼지토리를 생성할 수 있다  
+
+github의 우측상단에서 레포지토리를 생성할 수 있다  
 * New repository = 새로운 저장소
 * Import repository = 저장소 가져오기  
 * New gist = 코드 조각을 올릴 때 사용  
@@ -195,7 +197,21 @@ README.md는 깃허브 저장소에 들어왔을 때 이 소스코드가 무엇�
 
 ## 다른 사람이 만든 저장소 받아오기
 원격 저장소를 내 컴퓨터에 받아는 것을 **클론 (clobe)** 이라 한다  
-원격 저장소의 데이터를 가져오는 것을 **풀 (pull)** 이라 한다
+원격 저장소의 데이터를 가져오는 것을 **풀 (pull)** 이라 한다 
+
+push 해서 원격저장소에 저장하고, pull 해서 원격저장소에 저장된 데이터를 가져온다  
+push는 권한이 있어야 할 수 있기 때문에 레포지토리에 다른사람의 계정을 추가하면 다른사람에게도 권한이 생긴다  
+
+### 클론(clone)하기 실습  
+다른 폴더에 클론을 하는 실습
+
+1. 클론할 폴더에 접근
+`cd..` = 한단계 상위 폴더로 올라간다
+1. 레포지토리주소 클론
+레포지토리에 <span style = "color:green">CODE</a> 에서 주소를 복사할 수 있다  
+`git clone 레포지토리주소 .`  
+마지막에 `.` 은 현재 폴더를 의미하기 때문에 현재 폴더에 클론을 하겠다는 뜻이다  
+`.` 을 붙이지 않는다면 새로운 폴더가 생기고 클론이 된다  
 
 <br>
 
